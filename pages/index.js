@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function Home() {
 
-  const [ link, setLink ] = useState('');
+  const [link, setLink] = useState('');
 
   const mergePDF = async () => {
     // Load cover and content PDFs
@@ -28,7 +28,7 @@ export default function Home() {
     // add individual content pages to the new doc
 
     const contentPages2 = await doc.copyPages(content, content.getPageIndices());
-    for(const page of contentPages2) {
+    for (const page of contentPages2) {
       doc.addPage(page);
     }
 
@@ -55,21 +55,31 @@ export default function Home() {
   }
   return (
     <div className="container">
-      <h2 style={{marginTop: '50px'}}>Merge PDFs with Nextjs</h2>
-      {link && <a href="#"><h3 style={{color:"white"}}>view_PDF</h3></a>}
-       <div className="row">
-         <div className="column">
-         <object name="bane" width="400px" height="400px" data="https://pdf-lib.js.org/assets/american_flag.pdf"></object><br />
-         PDF_1
-         </div>
-         <div className="column">
-         <object width="400px" height="400px" data="https://pdf-lib.js.org/assets/with_update_sections.pdf"></object><br />
-         PDF_2
-         </div> 
-         <div>
-         </div>
-       </div>
-         <button onClick={mergePDF} className="btn btn-">Merge PDF</button>
+      <h2 style={{ marginTop: '50px' }}>Merge PDFs with Nextjs</h2>
+      {link && <a href={link}><h3 style={{ color: "white" }}>view_PDF</h3></a>}
+      <div className="row">
+        <div className="column">
+          <a
+            href="https://pdf-lib.js.org/assets/american_flag.pdf"
+          >
+            <img
+              title="american flag pdf document: click to view document"
+              className='flag' src="https://res.cloudinary.com/dogjmmett/image/upload/v1663941031/Screenshot_2022-09-23_at_16.40.01_zhrd0b.png" /><br />
+          </a>
+        </div>
+        <div className="column">
+          <a href="#">
+            <img
+              title="pdf document sample: click to view document"
+              className='flag'
+              src="https://res.cloudinary.com/dogjmmett/image/upload/v1663941029/Screenshot_2022-09-23_at_16.40.52_o6wyme.png"
+            /><br />
+          </a>
+        </div>
+        <div>
+        </div>
+      </div>
+      <button onClick={mergePDF} className="btn btn-">Merge PDF</button>
     </div>
   )
 }

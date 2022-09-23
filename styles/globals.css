@@ -69,3 +69,7 @@ button:hover {
   transition: 1s;
   box-shadow: 0 10px 20px rgba(166, 173, 201, 0.2);
 }
+
+.flag {
+  width:30vw;
+}
