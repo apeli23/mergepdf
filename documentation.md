@@ -1,4 +1,4 @@
-### Merge PDF docs with Nextjs
+### Merge PDF docs with Javascript
 
 ## Introduction
 
